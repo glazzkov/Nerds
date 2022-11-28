@@ -251,7 +251,8 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
-  padding: 80px 0px;
+  padding: 80px 0px 77px;
+  border-bottom: 2px solid var(--basic-secondary);
 }
 
 .features-item {
@@ -320,6 +321,12 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
+  padding: 73px 0px 50px;
+  background-image: url(../img/about-background.jpg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-position-y: 40px;
+  border-bottom: 2px solid var(--basic-secondary);
 }
 
 .info-left {
@@ -330,6 +337,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .info-right dl {
@@ -340,6 +348,11 @@ textarea {
 .info-right dd {
   margin: 0;
   grid-row: 1;
+  padding-bottom: 12px;
+}
+
+.info-right dt {
+  padding-bottom: 10px;
 }
 
 .info-subtitle {
@@ -347,6 +360,12 @@ textarea {
   font-weight: 500;
   font-size: 45px;
   line-height: 45px;
+  margin: 0px;
+  padding-bottom: 17px;
+}
+
+.info-desdription {
+  padding-bottom: 25px;
 }
 
 .info h3 {
@@ -355,6 +374,30 @@ textarea {
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
+  padding-bottom: 23px;
+}
+.info-right h3 {
+  padding-bottom: 13px;
+  padding-top: 10px;
+}
+
+.info-features li {
+  padding-left: 36px;
+  position: relative;
+}
+
+.info-features li::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  background-color: var(--accent-main);
+  left: 0;
+  top: 11px;
+}
+
+.info-features li:not(last-child) {
+  padding-bottom: 24px;
 }
 
 .info dd {
@@ -364,10 +407,9 @@ textarea {
   line-height: 64px;
 }
 
-.info dd span {
+.info dd sup {
   font-size: 26px;
   line-height: 40px;
-  vertical-align: top;
 }
 
 .info dt {
