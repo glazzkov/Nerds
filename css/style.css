@@ -37,6 +37,10 @@
 
 /* GLobal */
 
+* {
+  box-sizing: border-box;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -135,10 +139,29 @@ textarea {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 40px;
+  align-items: center;
+  padding: 50px 0;
 }
 
 .main-navigation-list {
   grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 160px;
+}
+
+.main-navigation-item {
+  padding-top: 15px;
+}
+
+.main-header .selected {
+  border-bottom: var(--accent-main) solid 2px;
+}
+
+.main-header-logo {
+  width: 160px;
+  height: 65px;
 }
 
 .main-header-logo:not(.active):hover {
@@ -151,10 +174,33 @@ textarea {
   opacity: 30%;
 }
 
+.cart-link {
+  text-align: end;
+  position: relative;
+}
+
+.cart-link::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/icons/icon-cart.svg);
+  width: 15px;
+  height: 15px;
+  top: 22px;
+  left: 45px;
+}
+
 /* Slider */
 
 .slider {
   background-color: var(--basic-secondary);
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  min-height: 430px;
 }
 
 .slide-subtitle {
@@ -165,11 +211,23 @@ textarea {
   margin: 0;
 }
 
+.temp-hidden {
+  display: none;
+}
+
 /* Features */
 
 .features-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features-item {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .features-item:nth-child(2) .features-button {
@@ -205,7 +263,9 @@ textarea {
 }
 
 .info-right {
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .info-right dl {
@@ -266,6 +326,10 @@ textarea {
   opacity: 20%;
 }
 
+.partner-link img {
+  max-width: 210px;
+}
+
 .partner-link:hover {
   opacity: 100%;
 }
@@ -301,9 +365,11 @@ textarea {
 
 .sort {
   grid-column: 2 / 4;
+  display: flex;
+  justify-content: space-between;
 }
 
-.catalog-pagination {
+.sort-direction .catalog-pagination {
   grid-column: 2 / -1;
 }
 
@@ -328,6 +394,7 @@ textarea {
   line-height: 30px;
   text-transform: uppercase;
   margin: 0;
+  margin-right: auto;
 }
 
 .filter-group label {
@@ -389,6 +456,12 @@ textarea {
   color: var(--basic-text-03);
 }
 
+.sort-list,
+.sort-direction {
+  display: flex;
+  align-items: center;
+}
+
 .sort-item {
   font-style: normal;
   font-weight: 400;
@@ -435,6 +508,10 @@ textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
+}
+
+.catalog-pagination {
+  display: flex;
 }
 
 .pagination-button.active {
@@ -502,6 +579,11 @@ textarea {
 }
 
 /* Popup */
+
+.popup {
+  /* временное скрытие */
+  display: none;
+}
 
 .popup-title {
   font-style: normal;
