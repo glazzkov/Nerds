@@ -42,8 +42,6 @@
         <form class="filter-form" action="https://echo.htmlacademy.ru">
           <fieldset class="filter-group filter-price">
             <legend>Стоимость:</legend>
-            <!-- TODO Настроить ползунок -->
-            <input type="range" name="price" id="filter-price">
             <p>
               <label for="filter-min-price">От</label>
               <input type="text" name="min-price" id="filter-min-price" value="0">
@@ -168,7 +166,10 @@
           </li>
         </ul>
         <h3 class="visually-hidden">Навигация по страницам с товарами</h3>
-        <ul class="catalog-pagination">
+      </section>
+
+      <section class="catalog-pagination">
+        <ul>
           <li><a class="button catalog-button pagination-button active">1</a></li>
           <li><a class="button catalog-button pagination-button" href="blank.html">2</a></li>
           <li><a class="button catalog-button pagination-button" href="blank.html">3</a></li>

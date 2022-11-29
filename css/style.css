@@ -39,6 +39,7 @@
 
 * {
   box-sizing: border-box;
+  transition: 100ms;
 }
 
 .visually-hidden {
@@ -475,15 +476,13 @@ textarea {
 .catalog-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* TODO Скорректировать строки */
-  grid-template-rows: min-content;
+  grid-template-rows: min-content min-content min-content;
   gap: 40px;
 }
 
 .filter {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  /* TODO Скорректировать грид-области */
 }
 .products {
   grid-column: 2 / -1;
@@ -499,10 +498,6 @@ textarea {
   grid-column: 2 / 4;
   display: flex;
   justify-content: space-between;
-}
-
-.sort-direction .catalog-pagination {
-  grid-column: 2 / -1;
 }
 
 .title-wrapper {
@@ -642,8 +637,27 @@ textarea {
   line-height: 18px;
 }
 
+/* pagination */
+
 .catalog-pagination {
+  grid-row: 4 / 5;
+  grid-column: 2 / -1;
+}
+
+.catalog-pagination ul {
   display: flex;
+}
+
+.pagination-button {
+  display: block;
+  min-width: 50px;
+  min-height: 50px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+li:last-child .pagination-button {
+  min-width: 260px;
 }
 
 .pagination-button.active {
