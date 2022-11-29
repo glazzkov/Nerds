@@ -98,6 +98,8 @@ ul {
 
 fieldset {
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .button {
@@ -167,7 +169,17 @@ textarea {
 }
 
 .main-header .selected {
-  border-bottom: var(--accent-main) solid 2px;
+  position: relative;
+}
+
+.main-header .selected::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: var(--accent-main);
+  position: absolute;
+  bottom: -15px;
+  right: 0;
 }
 
 .main-header-logo {
@@ -478,6 +490,7 @@ textarea {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: min-content min-content min-content;
   gap: 40px;
+  padding-top: 55px;
 }
 
 .filter {
@@ -509,6 +522,8 @@ textarea {
   font-size: 55px;
   line-height: 55px;
   text-align: center;
+  padding-top: 75px;
+  padding-bottom: 110px;
 }
 
 /* Filter and sort */
