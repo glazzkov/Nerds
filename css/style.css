@@ -131,6 +131,7 @@ textarea {
   margin: 0 auto;
   min-width: 1160px;
   max-width: 1160px;
+  /* position: relative; */
 }
 
 /* Main Header */
@@ -660,6 +661,21 @@ textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
+  position: relative;
+}
+
+.contacts-info {
+  position: absolute;
+  top: 0px;
+  background-color: var(--basic-main);
+  padding: 50px;
+  max-width: 320px;
+  top: 54px;
+}
+
+.contacts-info .button {
+  min-width: 220px;
+  margin-top: 23px;
 }
 
 .contacts h3 {
@@ -667,6 +683,7 @@ textarea {
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
+  padding-bottom: 5px;
 }
 
 .contacts-map {
@@ -680,6 +697,13 @@ textarea {
 .sotial {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+.sotial ul {
+  grid-column: 1 / 2;
+  display: flex;
 }
 
 .sotial div {
@@ -687,7 +711,37 @@ textarea {
 }
 
 .sotial-link {
+  display: block;
+  border-radius: 50%;
   background-color: var(--basic-darken);
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-right: 14px;
+}
+
+.sotial-link::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.sotial-link.vk::after {
+  background-image: url(../img/icons/vk-icon.svg);
+}
+.sotial-link.fb::after {
+  background-image: url(../img/icons/fb-icon.svg);
+}
+.sotial-link.inst::after {
+  background-image: url(../img/icons/insta-icon.svg);
+}
+
+.sotial-link:active::after {
+  opacity: 0.3;
 }
 
 .sotial-link:hover {
@@ -702,11 +756,15 @@ textarea {
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
+  margin: 0px;
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .sotial-description {
   font-size: 16px;
   line-height: 22px;
+  margin: 0px;
 }
 
 /* Popup */
