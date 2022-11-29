@@ -528,6 +528,13 @@ textarea {
 
 /* Filter and sort */
 
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 22px;
+}
+
 .filter-group legend,
 .sort-title {
   font-style: normal;
@@ -545,6 +552,7 @@ textarea {
   font-size: 16px;
   line-height: 20px;
   color: var(--accent-secondary-9);
+  position: relative;
 }
 
 .filter-group label:active {
@@ -555,19 +563,71 @@ textarea {
   color: var(--accent-secondary-11);
 }
 
-.filter-group input[type="checkbox"],
-.filter-group input[type="radio"] {
-  opacity: 40%;
+.filter-group legend {
+  padding-bottom: 16px;
 }
 
-.filter-group input[type="checkbox"]:hover,
-.filter-group input[type="radio"]:hover {
+.filter-label {
+  padding-left: 35px;
+  padding-bottom: 20px;
+}
+
+.filter-label input + span::before {
+  opacity: 40%;
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -5px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--accent-secondary-11);
+}
+
+.filter-radio input + span::before {
+  border-radius: 50%;
+}
+
+.filter-checkbox input + span::before {
+  border-radius: 3px;
+}
+
+.filter-label input + span::after {
+  opacity: 40%;
+  content: "";
+  position: absolute;
+}
+
+.filter-radio input:checked + span::after {
+  left: 7px;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-secondary-11);
+}
+
+.filter-checkbox input:checked + span::after {
+  left: 5px;
+  top: -3px;
+  width: 26px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(../img/icons/check-icon.svg);
+  background-repeat: no-repeat;
+}
+
+.filter-label input + span:hover::before,
+.filter-label input + span:hover::after {
   opacity: 100%;
 }
 
-.filter-group input[type="checkbox"]:active,
-.filter-group input[type="radio"]:active {
+.filter-label input + span:active::before,
+.filter-label input + span:active::after {
   opacity: 30%;
+}
+
+.filter-price {
+  padding-bottom: 40px;
 }
 
 .filter-price label {
@@ -576,12 +636,77 @@ textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 43%;
 }
 
 .filter-price input {
   background-color: var(--basic-secondary);
   border: none;
   outline: none;
+  max-width: 80px;
+  height: 38px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.range-controls {
+  min-width: 260px;
+  max-width: 260px;
+  height: 41px;
+  padding-top: 39px;
+  padding-bottom: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 32px;
+  background-color: var(--basic-secondary);
+  border-radius: 5px;
+}
+
+.range-controls .scale-wrapper {
+  max-width: 205px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  max-width: 100%;
+  background: #d7dcdf;
+}
+
+.range-controls .bar {
+  max-width: 100%;
+  height: 2px;
+  background: var(--accent-secondary-1);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.range-controls .toggle {
+  width: 20px;
+  height: 20px;
+  border: 8px solid var(--basic-main);
+  background-color: #ababab;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.range-controls .toggle-min {
+  transform: translateY(-10px);
+}
+.range-controls .toggle-max {
+  transform: translateY(-10px);
+}
+
+.price-inputs {
+  display: flex;
+  justify-content: space-between;
+  min-width: 260px;
+  max-width: 260px;
 }
 
 .catalog-button {
@@ -596,6 +721,11 @@ textarea {
 .catalog-button:not(.active):active {
   background-color: var(--accent-secondary-6);
   color: var(--basic-text-03);
+}
+
+.filter-form .catalog-button {
+  min-width: 260px;
+  margin-top: 10px;
 }
 
 .sort-list,

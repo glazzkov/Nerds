@@ -42,55 +42,68 @@
         <form class="filter-form" action="https://echo.htmlacademy.ru">
           <fieldset class="filter-group filter-price">
             <legend>Стоимость:</legend>
-            <p>
-
-            </p>
-            <p>
-              <label for="filter-min-price">От</label>
-              <input type="text" name="min-price" id="filter-min-price" value="0">
-            </p>
-            <p>
-              <label for="filter-max-price">До</label>
-              <input type="text" name="max-price" id="filter-max-price" value="150000">
+            <div class="range-controls">
+              <div class="scale-wrapper">
+                <div class="scale" style="
+                  padding-left: 10%;
+                  padding-right: 20%;">
+                  <div class="bar">
+                    <div class="toggle toggle-min" tabindex="0"></div>
+                    <div class="toggle toggle-max" tabindex="0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="price-inputs">
+              <label for="filter-min-price">
+                <span>От</span>
+                <input type="number" name="min-price" id="filter-min-price" value="0">
+              </label>
+              <label for="filter-max-price">
+                <span>До</span>
+                <input type="number" name="max-price" id="filter-max-price" value="150000">
+              </label>
             </p>
           </fieldset>
           <fieldset class="filter-group filter-markup">
             <legend>Сетка:</legend>
-            <p>
-              <input type="radio" name="markup" id="filter-markup-adaptive" value="adaptive" checked>
-              <label for="filter-markup-adaptive">Адаптивная</label>
-            </p>
-            <p>
-              <input type="radio" name="markup" id="filter-markup-fixed" value="fixed">
-              <label for="filter-markup-fixed">Фиксированная</label>
-            </p>
-            <p>
-              <input type="radio" name="markup" id="filter-markup-rubber" value="rubber">
-              <label for="filter-markup-rubber">Резиновая</label>
-            </p>
+            <label class="filter-label filter-radio" for="filter-markup-adaptive">
+              <input class="visually-hidden" type="radio" name="markup" id="filter-markup-adaptive" value="adaptive"
+                checked>
+              <span>Адаптивная</span>
+            </label>
+            <label class="filter-label filter-radio" for="filter-markup-fixed">
+              <input class="visually-hidden" type="radio" name="markup" id="filter-markup-fixed" value="fixed">
+              <span>Фиксированная</span>
+            </label>
+            <label class="filter-label filter-radio" for="filter-markup-rubber">
+              <input class="visually-hidden" type="radio" name="markup" id="filter-markup-rubber" value="rubber">
+              <span>Резиновая</span>
+            </label>
           </fieldset>
           <fieldset class="filter-group filter-features">
             <legend>Особенности:</legend>
-            <p>
-              <input type="checkbox" name="features" value="slider" id="filter-slider" checked>
-              <label for="filter-slider">Слайдер</label>
-            </p>
-            <p>
-              <input type="checkbox" name="features" value="advantage-block" id="filter-advantage-block">
-              <label for="filter-advantage-block">Блок преимуществ</label>
-            </p>
-            <p>
-              <input type="checkbox" name="features" value="news" id="filter-news" checked>
-              <label for="filter-news">Новости</label>
-            </p>
-            <p>
-              <input type="checkbox" name="features" value="galery" id="filter-galery">
-              <label for="filter-galery">Галерея</label>
-            </p>
-            <p>
-              <input type="checkbox" name="features" value="cart" id="filter-cart">
-              <label for="filter-cart">Козрина</label>
-            </p>
+            <label class="filter-label filter-checkbox" for="filter-slider">
+              <input class="visually-hidden" type="checkbox" name="features" value="slider" id="filter-slider" checked>
+              <span>Слайдер</span>
+            </label>
+            <label class="filter-label filter-checkbox" for="filter-advantage-block">
+              <input class="visually-hidden" type="checkbox" name="features" value="advantage-block"
+                id="filter-advantage-block">
+              <span>Блок преимуществ</span>
+            </label>
+            <label class="filter-label filter-checkbox" for="filter-news">
+              <input class="visually-hidden" type="checkbox" name="features" value="news" id="filter-news" checked>
+              <span>Новости</span>
+            </label>
+            <label class="filter-label filter-checkbox" for="filter-galery">
+              <input class="visually-hidden" type="checkbox" name="features" value="galery" id="filter-galery">
+              <span>Галерея</span>
+            </label>
+            <label class="filter-label filter-checkbox" for="filter-cart">
+              <input class="visually-hidden" type="checkbox" name="features" value="cart" id="filter-cart">
+              <span>Корзина</span>
+            </label>
           </fieldset>
           <button class="button catalog-button" type="submit">Показать</button>
         </form>
