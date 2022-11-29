@@ -652,7 +652,7 @@ textarea {
 /* Main Footer */
 
 .main-footer {
-  display: grid;
+  padding-top: 80px;
 }
 
 .contacts {
