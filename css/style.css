@@ -488,8 +488,8 @@ textarea {
 .catalog-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: min-content min-content min-content;
-  gap: 40px;
+  grid-template-rows: min-content min-content;
+  gap: 30px 40px;
   padding-top: 55px;
 }
 
@@ -504,7 +504,9 @@ textarea {
 .products-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px 40px;
+  padding-top: 18px;
+  padding-bottom: 20px;
 }
 
 .sort {
@@ -795,16 +797,74 @@ textarea {
 
 /* products */
 
-.products-item-wrapper {
-  background-color: var(--basic-secondary);
-  text-align: center;
+.products-item {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+  padding-top: 40px;
+  overflow: hidden;
 }
 
-.products-item:hover .product-title {
+.products-item:hover .products-item-wrapper {
+  display: flex;
+}
+
+.products-item:hover {
+  filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.25));
+}
+
+.products-item:hover:before {
+  opacity: 1;
+}
+
+.products-item::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0px;
+  opacity: 12%;
+  border-top: 40px solid var(--accent-secondary-11);
+}
+
+.products-item::after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--basic-main);
+  top: 13px;
+  left: 16px;
+  box-shadow: 23px 0px var(--basic-main), 46px 0px var(--basic-main);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+}
+
+.products-item-wrapper {
+  position: absolute;
+  background-color: var(--basic-secondary);
+  text-align: center;
+  width: 100%;
+  height: 231px;
+  bottom: 0px;
+  padding: 26px 52px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+.product-title:hover {
   color: var(--accent-main);
 }
 
-.products-item:active .product-title {
+.product-title:active {
   opacity: 30%;
 }
 
@@ -821,12 +881,20 @@ textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
+  margin-top: 10px;
+  margin-bottom: auto;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.product-button {
+  min-width: 200px;
 }
 
 /* pagination */
 
 .catalog-pagination {
-  grid-row: 4 / 5;
+  grid-row: 3 / 4;
   grid-column: 2 / -1;
 }
 
@@ -848,6 +916,8 @@ li:last-child .pagination-button {
 
 .pagination-button.active {
   background-color: var(--basic-main);
+  border: 3px solid #dbdbdb;
+  padding-bottom: 0;
 }
 
 /* Main Footer */
