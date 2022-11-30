@@ -693,13 +693,14 @@ textarea {
   box-shadow: 0 2px 1px 0 #cfcfcf;
   cursor: pointer;
   flex-shrink: 0;
+  transform: translateY(-10px);
 }
 
 .range-controls .toggle-min {
-  transform: translateY(-10px);
+  margin-left: -10px;
 }
 .range-controls .toggle-max {
-  transform: translateY(-10px);
+  margin-right: -10px;
 }
 
 .price-inputs {
@@ -732,6 +733,17 @@ textarea {
 .sort-direction {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sort-list {
+  min-width: 272px;
+  margin-right: 50px;
+}
+
+.sort-direction {
+  min-width: 40px;
 }
 
 .sort-item {
@@ -750,6 +762,35 @@ textarea {
 .sort-item:not(.active):active,
 .sort-item.active {
   opacity: 100%;
+}
+
+.sort-direction a {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.sort-direction a:not(.active) {
+  opacity: 0.3;
+}
+
+.sort-direction a:not(.active):hover {
+  opacity: 0.6;
+}
+
+.sort-direction a:active:hover,
+.sort-direction a:active {
+  opacity: 1;
+}
+
+.sort-direction-up {
+  background-image: url(../img/icons/icon-up-dir.svg);
+}
+
+.sort-derection-down {
+  background-image: url(../img/icons/icon-down-dir.svg);
 }
 
 /* products */
