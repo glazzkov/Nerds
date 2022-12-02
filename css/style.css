@@ -39,7 +39,6 @@
 
 * {
   box-sizing: border-box;
-  transition: 100ms;
 }
 
 .visually-hidden {
@@ -800,6 +799,7 @@ textarea {
 .products-item {
   position: relative;
   max-width: 100%;
+  min-height: 618px;
   max-height: 100%;
   border-radius: 5px;
   padding-top: 40px;
@@ -807,7 +807,7 @@ textarea {
 }
 
 .products-item:hover .products-item-wrapper {
-  display: flex;
+  opacity: 1;
 }
 
 .products-item:hover {
@@ -843,6 +843,8 @@ textarea {
 .product-image {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  background-color: var(--basic-secondary);
 }
 
 .products-item-wrapper {
@@ -857,7 +859,7 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  display: none;
+  opacity: 0;
 }
 
 .product-title:hover {
