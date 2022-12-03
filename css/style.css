@@ -1,7 +1,6 @@
 /* 
   TODO Тесты на переполняемость
   TODO Тесты на недополняемость
-  TODO Вставить карту
   TODO Доверстать модалку
   TODO Оживить ползунок с ценой
   TODO Префиксы
@@ -1073,8 +1072,30 @@ li:last-child .pagination-button {
 /* Popup */
 
 .popup {
-  /* временное скрытие */
-  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000017;
+}
+
+.popup-wrapper {
+  background-color: var(--basic-main);
+  min-width: 960px;
+  max-width: 960px;
+  min-height: 590px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 63px 100px 84px;
+  position: relative;
+}
+
+.popup-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 40px;
 }
 
 .popup-title {
@@ -1082,17 +1103,24 @@ li:last-child .pagination-button {
   font-weight: 700;
   font-size: 45px;
   line-height: 53px;
+  padding-bottom: 40px;
 }
 
-.popup-field label {
+.popup-field span {
+  padding-bottom: 10px;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .popup-field input,
 .popup-field textarea {
+  width: 100%;
+  min-height: 50px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1103,9 +1131,14 @@ li:last-child .pagination-button {
   color: var(--accent-secondary-10);
 }
 
-.popup-field input:hover,
-.popup-field textarea:hover {
-  border: 2px solid var(--accent-secondary-4);
+.popup-field textarea {
+  height: 100%;
+}
+
+.popup-field-multiline {
+  grid-column: 1 / -1;
+  min-height: 120px;
+  margin-bottom: 50px;
 }
 
 .popup-field input:focus,
@@ -1116,4 +1149,42 @@ li:last-child .pagination-button {
 .popup-field input:invalid,
 .popup-field textarea:invalid {
   border: 2px solid var(--accent-main-hover);
+}
+
+.popup-field input:hover,
+.popup-field textarea:hover {
+  border: 2px solid var(--accent-secondary-4);
+}
+
+.popup-button {
+  min-width: 260px;
+  max-width: 260px;
+
+  grid-column: 1 / -1;
+}
+
+.popup-button-close {
+  position: absolute;
+  right: 90px;
+  top: 80px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/close-cross.svg);
+  background-color: transparent;
+  opacity: 0.3;
+}
+
+.popup-button-close:hover {
+  opacity: 1;
+}
+
+.popup-button-close:active {
+  opacity: 0.1;
+}
+
+.hidden {
+  display: none;
 }
