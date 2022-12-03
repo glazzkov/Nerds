@@ -1,3 +1,13 @@
+/* 
+  TODO Тесты на переполняемость
+  TODO Тесты на недополняемость
+  TODO Вставить карту
+  TODO Доверстать модалку
+  TODO Оживить ползунок с ценой
+  TODO Префиксы
+  TODO Минимализация файлов
+ */
+
 /* Fonts */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
@@ -573,6 +583,7 @@ textarea {
 .filter-label {
   padding-left: 35px;
   padding-bottom: 20px;
+  max-width: 300px;
 }
 
 .filter-label input + span::before {
@@ -920,6 +931,7 @@ textarea {
 
 .catalog-pagination ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .pagination-button {
@@ -961,6 +973,7 @@ li:last-child .pagination-button {
   padding: 50px;
   max-width: 320px;
   top: 54px;
+  box-shadow: 2px 2px 6px 2px #cccccc;
 }
 
 .contacts-info .button {
@@ -977,11 +990,11 @@ li:last-child .pagination-button {
 }
 
 .contacts-map {
-  background-color: var(--basic-main);
-  justify-self: center;
+  background-color: var(--basic-secondary);
+  min-height: 416px;
   max-height: 416px;
   min-width: 100%;
-  object-fit: cover;
+  border: none;
 }
 
 .sotial {
