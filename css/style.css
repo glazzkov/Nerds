@@ -887,8 +887,24 @@ textarea {
   line-height: 18px;
   margin-top: 10px;
   margin-bottom: auto;
+  min-height: 50px;
   max-height: 50px;
   overflow: hidden;
+  position: relative;
+}
+
+.product-description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1.2em;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--basic-secondary) 90%
+  );
 }
 
 .product-button {
