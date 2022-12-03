@@ -1,7 +1,4 @@
 /* 
-  TODO Тесты на переполняемость
-  TODO Тесты на недополняемость
-  TODO Доверстать модалку
   TODO Оживить ползунок с ценой
   TODO Префиксы
   TODO Минимализация файлов
@@ -122,8 +119,7 @@ fieldset {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  padding-top: 17px;
-  padding-bottom: 15px;
+  padding: 17px 10px 15px;
 }
 
 textarea {
@@ -171,11 +167,13 @@ textarea {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 160px;
+  margin: 0 150px;
 }
 
 .main-navigation-item {
   padding-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .main-header .selected {
@@ -288,6 +286,7 @@ textarea {
   min-width: 300px;
   max-width: 300px;
   min-height: 350px;
+  padding-top: 160px;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -358,6 +357,7 @@ textarea {
 }
 
 .info-right {
+  padding-top: 160px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -724,6 +724,7 @@ textarea {
 }
 
 .catalog-button {
+  max-width: 300px;
   background-color: var(--basic-secondary);
   color: var(--basic-text);
 }
@@ -751,8 +752,8 @@ textarea {
 }
 
 .sort-list {
-  min-width: 272px;
-  margin-right: 50px;
+  min-width: 283px;
+  margin-right: 42px;
 }
 
 .sort-direction {
@@ -766,6 +767,7 @@ textarea {
   line-height: 18px;
   text-transform: uppercase;
   opacity: 30%;
+  padding: 0 5px;
 }
 
 .sort-item:not(.active):hover {
@@ -888,6 +890,8 @@ textarea {
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
+  max-height: 50px;
+  overflow: hidden;
 }
 
 .product-description {
@@ -900,21 +904,6 @@ textarea {
   min-height: 50px;
   max-height: 50px;
   overflow: hidden;
-  position: relative;
-}
-
-.product-description::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 1.2em;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--basic-secondary) 90%
-  );
 }
 
 .product-button {
@@ -938,6 +927,7 @@ textarea {
   min-width: 50px;
   min-height: 50px;
   margin-right: 10px;
+  margin-bottom: 15px;
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -970,7 +960,8 @@ li:last-child .pagination-button {
   top: 0px;
   background-color: var(--basic-main);
   padding: 50px;
-  max-width: 320px;
+  min-width: 320px;
+  max-width: 500px;
   top: 54px;
   box-shadow: 2px 2px 6px 2px #cccccc;
 }
@@ -1001,11 +992,16 @@ li:last-child .pagination-button {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   padding-top: 68px;
-  padding-bottom: 68px;
+  padding-bottom: 58px;
 }
 .sotial ul {
   grid-column: 1 / 2;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.sotial-item {
+  padding-bottom: 10px;
 }
 
 .sotial div {
