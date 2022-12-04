@@ -596,6 +596,10 @@ textarea {
   border: 3px solid var(--accent-secondary-11);
 }
 
+.filter-label input:focus + span {
+  outline: 1px solid black;
+}
+
 .filter-radio input + span::before {
   border-radius: 50%;
 }
@@ -874,6 +878,10 @@ textarea {
   justify-content: space-between;
   align-items: center;
   opacity: 0;
+}
+
+.products-item-wrapper:focus {
+  opacity: 1;
 }
 
 .product-title:hover {
