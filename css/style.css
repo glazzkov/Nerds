@@ -824,7 +824,8 @@ textarea {
   overflow: hidden;
 }
 
-.products-item:hover .products-item-wrapper {
+.products-item:hover .products-item-wrapper,
+.products-item-wrapper:focus-within {
   opacity: 1;
 }
 
