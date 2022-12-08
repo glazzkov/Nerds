@@ -582,10 +582,16 @@ textarea {
   padding-left: 35px;
   padding-bottom: 18px;
   max-width: 300px;
+  opacity: 70%;
 }
-
-.filter-label span:active {
+.filter-label:hover {
+  opacity: 100%;
+}
+.filter-label input:disabled + span {
   opacity: 30%;
+}
+.filter-label input:disabled + span:hover {
+  opacity: 21%;
 }
 
 .filter-label input + span::before {
@@ -634,21 +640,6 @@ textarea {
   border-radius: 50%;
   background-image: url(../img/icons/check-icon.svg);
   background-repeat: no-repeat;
-}
-
-.filter-label input + span:hover::before,
-.filter-label input + span:hover::after {
-  opacity: 100%;
-}
-
-.filter-label input + span:active::before,
-.filter-label input + span:active::after {
-  opacity: 30%;
-}
-
-.filter-label input:disabled + span {
-  opacity: 30%;
-  pointer-events: none;
 }
 
 .filter-price {
