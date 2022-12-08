@@ -7,11 +7,6 @@ let contactPopupButtonClose = contactPopup.querySelector(
 );
 let contactPopupOverlay = document.querySelector(".popup-overlay");
 
-console.log(contactPopup);
-console.log(contactPopupButtonOpen);
-console.log(contactPopupButtonClose);
-console.log(contactPopupOverlay);
-
 contactPopupButtonOpen.addEventListener("click", (evt) => {
   evt.preventDefault();
   contactPopup.classList.toggle("popup-show");

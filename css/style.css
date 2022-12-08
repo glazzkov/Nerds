@@ -1094,6 +1094,8 @@ li:last-child .pagination-button {
 
 .popup-show {
   display: flex;
+  animation-name: popup-show;
+  animation-duration: 300ms;
 }
 
 .popup-overlay {
@@ -1208,4 +1210,12 @@ li:last-child .pagination-button {
 
 .popup-button-close:active {
   opacity: 0.1;
+}
+
+@keyframes popup-show {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+  }
 }
