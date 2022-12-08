@@ -37,7 +37,6 @@ let changeSlide = function (slideNumber) {
   }
   sliderButtonList[slideNumber].disabled = true;
   slideList[slideNumber].classList.add("slide-show");
-  console.log(slideNumber);
 };
 
 for (let i = 0; i < slideList.length; i++) {
