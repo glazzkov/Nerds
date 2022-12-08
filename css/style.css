@@ -227,6 +227,7 @@ textarea {
 
 .slider {
   background-color: var(--basic-secondary);
+  position: relative;
 }
 
 .slide {
@@ -237,6 +238,9 @@ textarea {
   background-repeat: no-repeat;
   background-position: right top;
   padding: 78px 0px;
+  display: none;
+  animation-name: slide-change;
+  animation-duration: 2s;
 }
 
 .slide-1 {
@@ -262,12 +266,53 @@ textarea {
   color: var(--accent-secondary-9);
 }
 
-.temp-hidden {
-  display: none;
+.slide-show {
+  display: flex;
 }
 
 .slide-button {
   min-width: 240px;
+}
+
+.slider-pagination {
+  position: absolute;
+  bottom: 97px;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.slider-pagination-button {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--basic-main);
+  position: relative;
+}
+
+.slider-pagination-button[disabled]::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  border: 2px solid #c1c1c1;
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+}
+
+.slider-pagination li:not(:last-child) {
+  margin-right: 17px;
+}
+
+@keyframes slide-change {
+  0% {
+    opacity: 0;
+  }
+  100% {
+  }
 }
 
 /* Features */
