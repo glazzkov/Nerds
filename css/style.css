@@ -312,13 +312,13 @@ textarea {
 }
 
 .features-item-sites {
-  background-image: url(../img/icons/icon-sites.jpg);
+  background-image: url(../img/icons/icon-sites.png);
 }
 .features-item-apps {
-  background-image: url(../img/icons/icon-apps.jpg);
+  background-image: url(../img/icons/icon-apps.png);
 }
 .features-item-presentations {
-  background-image: url(../img/icons/icon-presentations.jpg);
+  background-image: url(../img/icons/icon-presentations.png);
 }
 
 .features-item-apps .features-button {
@@ -348,7 +348,7 @@ textarea {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   padding: 73px 20px 50px;
-  background-image: url(../img/about-background.jpg);
+  background-image: url(../img/about-background.png);
   background-repeat: no-repeat;
   background-position-y: 40px;
   background-position-x: 820px;
