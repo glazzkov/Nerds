@@ -1,7 +1,6 @@
 /* 
   TODO Оживить ползунок с ценой
   TODO оживить слайдер
-  TODO оживить попап
 
   TODO Префиксы
   TODO Минимализация файлов
@@ -71,7 +70,7 @@
   min-width: 960px;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -211,6 +210,7 @@ textarea {
 .cart-link {
   text-align: end;
   position: relative;
+  margin: 0;
 }
 
 .cart-link::before {
@@ -347,11 +347,11 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
-  padding: 73px 0px 50px;
+  padding: 73px 20px 50px;
   background-image: url(../img/about-background.jpg);
   background-repeat: no-repeat;
-  background-position: top right;
   background-position-y: 40px;
+  background-position-x: 820px;
   border-bottom: 2px solid var(--basic-secondary);
 }
 
@@ -519,7 +519,7 @@ textarea {
   grid-template-columns: 1fr 1fr;
   gap: 30px 40px;
   padding-top: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 
 .sort {
@@ -547,7 +547,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 22px;
+  padding-bottom: 29px;
 }
 
 .filter-group legend,
@@ -584,7 +584,7 @@ textarea {
 
 .filter-label {
   padding-left: 35px;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
   max-width: 300px;
 }
 
@@ -760,11 +760,11 @@ textarea {
 
 .sort-list {
   min-width: 283px;
-  margin-right: 42px;
+  margin-right: 39px;
 }
 
 .sort-direction {
-  min-width: 40px;
+  min-width: 43px;
 }
 
 .sort-item {
@@ -825,6 +825,7 @@ textarea {
   border-radius: 5px;
   padding-top: 40px;
   overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .products-item:hover .products-item-wrapper,
@@ -911,7 +912,7 @@ textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
-  margin-top: 10px;
+  margin-top: 14px;
   margin-bottom: auto;
   min-height: 50px;
   max-height: 50px;
@@ -938,7 +939,7 @@ textarea {
   display: block;
   min-width: 50px;
   min-height: 50px;
-  margin-right: 10px;
+  margin-right: 11px;
   margin-bottom: 15px;
   padding-right: 10px;
   padding-left: 10px;
@@ -951,12 +952,17 @@ li:last-child .pagination-button {
   background-color: var(--basic-main);
   border: 3px solid #dbdbdb;
   padding-bottom: 0;
+  padding-top: 14px;
 }
 
 /* Main Footer */
 
 .main-footer {
   padding-top: 80px;
+}
+
+.main-footer-catalog {
+  padding-top: 45px;
 }
 
 .contacts {
@@ -981,6 +987,7 @@ li:last-child .pagination-button {
 .contacts-info .button {
   min-width: 220px;
   margin-top: 23px;
+  display: inline-block;
 }
 
 .contacts h3 {
@@ -1003,7 +1010,7 @@ li:last-child .pagination-button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
-  padding-top: 68px;
+  padding-top: 64px;
   padding-bottom: 58px;
 }
 .sotial ul {
@@ -1027,7 +1034,7 @@ li:last-child .pagination-button {
   width: 80px;
   height: 80px;
   position: relative;
-  margin-right: 14px;
+  margin-right: 10px;
 }
 
 .sotial-link::after {
@@ -1086,7 +1093,19 @@ li:last-child .pagination-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+
+.popup-show {
+  display: flex;
+}
+
+.popup-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
   background-color: #00000017;
+  z-index: 0;
 }
 
 .popup-wrapper {
@@ -1097,13 +1116,14 @@ li:last-child .pagination-button {
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
   padding: 63px 100px 84px;
   position: relative;
+  z-index: 1;
 }
 
 .popup-form {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px 40px;
+  gap: 30px 40px;
 }
 
 .popup-title {
@@ -1111,7 +1131,7 @@ li:last-child .pagination-button {
   font-weight: 700;
   font-size: 45px;
   line-height: 53px;
-  padding-bottom: 40px;
+  padding-bottom: 36px;
 }
 
 .popup-field span {
@@ -1127,6 +1147,7 @@ li:last-child .pagination-button {
 
 .popup-field input,
 .popup-field textarea {
+  padding: 15px;
   width: 100%;
   min-height: 50px;
   font-style: normal;
@@ -1146,7 +1167,7 @@ li:last-child .pagination-button {
 .popup-field-multiline {
   grid-column: 1 / -1;
   min-height: 120px;
-  margin-bottom: 50px;
+  margin-bottom: 43px;
 }
 
 .popup-field input:focus,
@@ -1191,8 +1212,4 @@ li:last-child .pagination-button {
 
 .popup-button-close:active {
   opacity: 0.1;
-}
-
-.hidden {
-  display: none;
 }
