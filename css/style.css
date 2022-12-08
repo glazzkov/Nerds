@@ -570,10 +570,6 @@ textarea {
   position: relative;
 }
 
-.filter-group label:active {
-  opacity: 30%;
-}
-
 .filter-group input {
   color: var(--accent-secondary-11);
 }
@@ -586,6 +582,10 @@ textarea {
   padding-left: 35px;
   padding-bottom: 18px;
   max-width: 300px;
+}
+
+.filter-label span:active {
+  opacity: 30%;
 }
 
 .filter-label input + span::before {
@@ -644,6 +644,11 @@ textarea {
 .filter-label input + span:active::before,
 .filter-label input + span:active::after {
   opacity: 30%;
+}
+
+.filter-label input:disabled + span {
+  opacity: 30%;
+  pointer-events: none;
 }
 
 .filter-price {
