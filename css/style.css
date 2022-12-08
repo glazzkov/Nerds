@@ -1084,8 +1084,8 @@ li:last-child .pagination-button {
 
 .popup {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1100,8 +1100,8 @@ li:last-child .pagination-button {
 
 .popup-overlay {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #00000017;
   z-index: 0;
 }
@@ -1215,6 +1215,7 @@ li:last-child .pagination-button {
 @keyframes popup-show {
   0% {
     transform: translateY(-100vh);
+    opacity: 0;
   }
   100% {
   }
